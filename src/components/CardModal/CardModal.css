@@ -1,0 +1,15 @@
+.modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 16px;
+}
+
+.modal-card-img {
+    max-width: 300px;
+    max-height: 420px;
+}
