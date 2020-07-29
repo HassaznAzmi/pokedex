@@ -31,6 +31,20 @@ export default function Home() {
         })
     }
 
+    const cards = pokemonList.map(card => {
+        return (
+            <div
+                className="card-container"
+                onClick={() => {
+                    setModalOpen(true);
+                    setCurrCard(card)
+                }}
+            >
+                <Card key={card.id} card={card} alt="" />
+            </div>
+        )
+    })
+
     return (
         <div className="home-container">
             <h1 className="header">PokeDex</h1>
@@ -60,9 +74,7 @@ export default function Home() {
             {loading
             ? <CircularProgress size={60} />
             : <div className="cards-grid">
-                {pokemonList.map(card => (
-                    <Card key={card.id} card={card} alt="" setModalOpen={setModalOpen} setCurrCard={setCurrCard} />
-                ))}
+                {cards}
             </div>}
 
             <CardModal modalOpen={modalOpen} setModalOpen={setModalOpen} card={currCard} />
